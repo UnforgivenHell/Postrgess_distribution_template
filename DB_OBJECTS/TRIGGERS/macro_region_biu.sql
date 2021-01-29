@@ -1,0 +1,4 @@
+CREATE TRIGGER macro_region_biu
+BEFORE INSERT OR UPDATE ON macro_region
+FOR EACH ROW
+EXECUTE PROCEDURE upd_modify_date();

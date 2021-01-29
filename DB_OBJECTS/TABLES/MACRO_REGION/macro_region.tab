@@ -1,0 +1,12 @@
+DO $$
+BEGIN
+  EXECUTE 'CREATE TABLE IF NOT EXISTS macro_region (
+  code             numeric(20) NOT NULL,
+  name             character varying(20) NOT NULL,
+  full_name        character varying(100) NOT NULL,
+  active           numeric(1) NOT NULL,
+  last_event_date  timestamp without time zone NOT NULL,
+  modify_date      timestamp without time zone NOT NULL
+) TABLESPACE ' || current_setting('my.data_tbs');
+END;
+$$

@@ -1,0 +1,8 @@
+CREATE OR REPLACE FUNCTION upd_modify_date() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+  NEW.modify_date := NOW();
+  RETURN NEW;
+END;
+$BODY$
+LANGUAGE plpgsql;
